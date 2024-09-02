@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HouseDetailsActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_size"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="ขนาดพื้นที่: "
+            android:textSize="18sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:id="@+id/tv_bedrooms"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="จำนวนห้องนอน: "
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_size"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tv_bathrooms"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="จำนวนห้องน้ำ: "
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_bedrooms"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="ราคา: "
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_bathrooms"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tv_house_condition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="สภาพของบ้าน: "
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tv_house_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="ประเภทของบ้าน: "
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_house_condition"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tv_year_built"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="ปีที่สร้าง: "
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_house_type"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tv_parking_spaces"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="จำนวนที่จอดรถ: "
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_year_built"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="ที่อยู่: "
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/tv_parking_spaces"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <ImageView
+            android:id="@+id/iv_house_image"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:background="@color/black"
+            android:contentDescription="รูปภาพบ้าน"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_address"
+            android:layout_marginTop="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

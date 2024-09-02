@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="tv_size" type="id" />
+    <item name="tv_bathrooms" type="id" />
+    <item name="tv_bedrooms" type="id" />
+    <item name="tv_price" type="id" />
+    <item name="tv_house_condition" type="id" />
+    <item name="tv_house_type" type="id" />
+    <item name="tv_year_built" type="id" />
+    <item name="tv_parking_spaces" type="id" />
+    <item name="tv_address" type="id" />
+</resources>
