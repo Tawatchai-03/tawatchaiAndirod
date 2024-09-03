@@ -1,49 +1,58 @@
 package com.example.homeappdetail
 
+import ApiService
+import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.TextView
+import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.bumptech.glide.Glide
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class HouseDetailsActivity : AppCompatActivity() {
+
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var adapter: HouseAdapter
+    private lateinit var btnBackToAdd: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_house_details)
 
-        // Base URL of the server
-        val baseUrl = "http://10.13.2.144:3000" // Replace with your actual server IP
+        recyclerView = findViewById(R.id.recycler_view)
+        btnBackToAdd = findViewById(R.id.btn_back_to_add)
 
-        // Retrieve data from Intent
-        val houseSize = intent.getStringExtra("house_size") ?: "Not available"
-        val houseBedrooms = intent.getStringExtra("house_bedrooms") ?: "Not available"
-        val houseBathrooms = intent.getStringExtra("house_bathrooms") ?: "Not available"
-        val housePrice = intent.getStringExtra("house_price") ?: "Not available"
-        val houseCondition = intent.getStringExtra("house_condition") ?: "Not available"
-        val houseType = intent.getStringExtra("house_type") ?: "Not available"
-        val yearBuilt = intent.getStringExtra("year_built") ?: "Not available"
-        val parkingSpaces = intent.getStringExtra("parking_spaces") ?: "Not available"
-        val address = intent.getStringExtra("house_address") ?: "Not available"
-        val imageUrl = intent.getStringExtra("image_url") ?: ""
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        adapter = HouseAdapter(listOf())
+        recyclerView.adapter = adapter
 
-        // Bind data to the UI elements
-        findViewById<TextView>(R.id.tv_size).text = "ขนาดพื้นที่: $houseSize ตร.ม."
-        findViewById<TextView>(R.id.tv_bedrooms).text = "จำนวนห้องนอน: $houseBedrooms"
-        findViewById<TextView>(R.id.tv_bathrooms).text = "จำนวนห้องน้ำ: $houseBathrooms"
-        findViewById<TextView>(R.id.tv_price).text = "ราคา: $housePrice บาท"
-        findViewById<TextView>(R.id.tv_house_condition).text = "สภาพของบ้าน: $houseCondition"
-        findViewById<TextView>(R.id.tv_house_type).text = "ประเภทของบ้าน: $houseType"
-        findViewById<TextView>(R.id.tv_year_built).text = "ปีที่สร้าง: $yearBuilt"
-        findViewById<TextView>(R.id.tv_parking_spaces).text = "จำนวนที่จอดรถ: $parkingSpaces"
-        findViewById<TextView>(R.id.tv_address).text = "ที่อยู่: $address"
+        fetchHouses()
 
-        // Load the image using Glide
-        val imageView = findViewById<ImageView>(R.id.iv_house_image)
-        val fullImageUrl = if (imageUrl.isNotEmpty()) "$baseUrl$imageUrl" else ""
-        Glide.with(this)
-            .load(fullImageUrl)
-            .placeholder(R.drawable.ic_launcher_background) // Add a placeholder image
-            .error(R.drawable.ic_launcher_background) // Add an error image
-            .into(imageView)
+        btnBackToAdd.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    private fun fetchHouses() {
+        val apiService = RetrofitClient.getClient().create(ApiService::class.java)
+        apiService.getHouses().enqueue(object : Callback<List<House>> {
+            override fun onResponse(call: Call<List<House>>, response: Response<List<House>>) {
+                if (response.isSuccessful) {
+                    response.body()?.let {
+                        adapter.updateHouses(it)
+                    }
+                } else {
+                    Toast.makeText(this@HouseDetailsActivity, "Failed to retrieve houses", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<List<House>>, t: Throwable) {
+                Toast.makeText(this@HouseDetailsActivity, "Error: ${t.message}", Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }

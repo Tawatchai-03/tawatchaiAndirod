@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tv_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ขนาดพื้นที่: " />
+
+    <TextView
+        android:id="@+id/tv_bedrooms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="จำนวนห้องนอน: " />
+
+    <TextView
+        android:id="@+id/tv_bathrooms"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="จำนวนห้องน้ำ: " />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ราคา: " />
+
+    <TextView
+        android:id="@+id/tv_house_condition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="สภาพของบ้าน: " />
+
+    <TextView
+        android:id="@+id/tv_house_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ประเภทของบ้าน: " />
+
+    <TextView
+        android:id="@+id/tv_year_built"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ปีที่สร้าง: " />
+
+    <TextView
+        android:id="@+id/tv_parking_spaces"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="จำนวนที่จอดรถ: " />
+
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ที่อยู่: " />
+
+    <ImageView
+        android:id="@+id/iv_house_image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:background="@color/black" />
+
+</LinearLayout>
