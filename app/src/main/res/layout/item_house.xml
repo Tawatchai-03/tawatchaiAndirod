@@ -1,69 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:padding="16dp">
+    android:layout_margin="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp">
 
-    <TextView
-        android:id="@+id/tv_size"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ขนาดพื้นที่: " />
-
-    <TextView
-        android:id="@+id/tv_bedrooms"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="จำนวนห้องนอน: " />
-
-    <TextView
-        android:id="@+id/tv_bathrooms"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="จำนวนห้องน้ำ: " />
-
-    <TextView
-        android:id="@+id/tv_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ราคา: " />
-
-    <TextView
-        android:id="@+id/tv_house_condition"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="สภาพของบ้าน: " />
-
-    <TextView
-        android:id="@+id/tv_house_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ประเภทของบ้าน: " />
-
-    <TextView
-        android:id="@+id/tv_year_built"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ปีที่สร้าง: " />
-
-    <TextView
-        android:id="@+id/tv_parking_spaces"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="จำนวนที่จอดรถ: " />
-
-    <TextView
-        android:id="@+id/tv_address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="ที่อยู่: " />
-
-    <ImageView
-        android:id="@+id/iv_house_image"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="centerCrop"
-        android:background="@color/black" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ขนาดพื้นที่: "
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/tv_bedrooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="จำนวนห้องนอน: "
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_bathrooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="จำนวนห้องน้ำ: "
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ราคา: "
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_house_condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="สภาพของบ้าน: "
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_house_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ประเภทของบ้าน: "
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_year_built"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ปีที่สร้าง: "
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_parking_spaces"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="จำนวนที่จอดรถ: "
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ที่อยู่: "
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/iv_house_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/darker_gray" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

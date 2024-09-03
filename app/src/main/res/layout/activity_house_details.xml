@@ -6,6 +6,16 @@
     android:orientation="vertical"
     tools:context=".HouseDetailsActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="ข้อมูลบ้านที่บันทึกไว้"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:gravity="center"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
@@ -17,5 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="กลับไปเพิ่มข้อมูล"
-        android:layout_margin="16dp" />
+        android:layout_margin="16dp"
+        android:textColor="@android:color/white"
+        android:layout_gravity="center"/>
 </LinearLayout>
